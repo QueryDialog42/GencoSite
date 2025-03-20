@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lightstyle.css">
+    <title>GencoGames</title>
+</head>
+<body>
+    <button type="button" id="games" class="menu" onclick="window.location.href = 'mainpage.html'">Genco Games</button>
+    <button type="button" id="games" class="menu" onclick="window.location.href = 'aboutgenco.html'">About Genco</button>
+    <button type="button" id="mark">GencoSite</button>
+
+    <div id="writeitrun">
+        <p id="score" class="content">0</p><br><br><br>
+        <p id="question" class="content"></p><br><br><br>
+        <input id="answer" class="content" autocomplete="off"><br><br><br>
+        <p id="countdown" class="content">60 seconds</p>
+    </div>
+    
+    <div id="contact">
+        <a href="https://www.instagram.com/batugencpiano/"><img src="" alt="instagram" id="instagram"></a>        
+    </div>
+    <p id="datetime">YYYY-MM-DD</p>
+</body>
+<script>
+    function setTheme(theme, instagram){
+        let oldlink = document.getElementsByTagName("link").item(0);
+        let newlink = document.createElement("link");
+        newlink.setAttribute("rel", "stylesheet");
+        newlink.setAttribute("type", "text/css");
+        newlink.setAttribute("href", theme);
+
+        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+        document.body.style.display = 'block';
+
+        document.getElementById("instagram").src = instagram;
+    };
+    window.onload = function(){
+        document.body.style.zoom = "80%";
+        document.getElementById("datetime").innerText = new Date().toISOString().split("T")[0];
+        let theme = window.localStorage.getItem("theme");
+        let instagram = window.localStorage.getItem("instagram");
+        if (theme && instagram){
+            setTheme(theme, instagram);
+        }
+        else{       
+            window.alert("An error occured about theme. Light style will be used");
+            setTheme("lightstyle.css", "images/instagramdark.ico");
+        }
+    }
+</script>
+<script src="writeitpage.js"></script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lightstyle.css">
+    <title>GencoGames</title>
+</head>
+<body>
+    <button type="button" id="games" class="menu" onclick="window.location.href = 'mainpage.html'">Genco Games</button>
+    <button type="button" id="games" class="menu" onclick="window.location.href = 'aboutgenco.html'">About Genco</button>
+    <button type="button" id="mark">GencoSite</button>
+    <div id="sudokurun">
+        <p id="sudokutimer">00:00:00</p>
+        <script>
+            for (let i = 1; i <= 81; i++) {
+                let className = '';
+                if (i % 9 == 3 || i == 3) className += 'grp1 ';
+                if (i % 9 == 6 || i == 6) className += 'grp2 ';
+                if (i >= 28 && i <= 35) className += 'grp3 ';
+                if (i >= 55 && i <= 62) className += 'grp4 ';
+                document.write(`<input type="text" id="${i}" maxlength="1" class="${className}">`);
+                if (i % 9 == 0) document.write('<br>');
+            }
+        </script>
+    </div>
+    <div id="controlpanel">
+        <button type="text" id="clear">Clear</button>
+        <button type="text" id="control">Control</button>
+    </div>
+    <div id="contact">
+        <a href="https://www.instagram.com/batugencpiano/"><img src="" alt="instagram" id="instagram"></a>        
+    </div>
+    <p id="datetime">YYYY-MM-DD</p>
+</body>
+<script>
+    function setTheme(theme, instagram){
+        let oldlink = document.getElementsByTagName("link").item(0);
+        let newlink = document.createElement("link");
+        newlink.setAttribute("rel", "stylesheet");
+        newlink.setAttribute("type", "text/css");
+        newlink.setAttribute("href", theme);
+
+        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+        document.body.style.display = 'block';
+
+        document.getElementById("instagram").src = instagram;
+    };
+    document.getElementById("datetime").innerText = new Date().toISOString().split("T")[0];
+    document.body.style.zoom = "80%";
+    let theme = window.localStorage.getItem("theme");
+    let instagram = window.localStorage.getItem("instagram");
+    if (theme && instagram){
+        setTheme(theme, instagram);
+    }
+    else{
+        window.alert("An error occured about theme. Light style will be used");
+        setTheme("lightstyle.css", "images/instagramdark.ico");
+    }
+</script>
+<script src="sudokupage.js"></script>
+</html>

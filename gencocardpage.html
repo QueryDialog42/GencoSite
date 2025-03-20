@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lightstyle.css">
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script> 
+    <title>GencoGames</title>
+</head>
+<body>
+    <button type="button" id="games" class="menu" onclick="window.location.href = 'mainpage.html'">Genco Games</button>
+    <button type="button" id="games" class="menu" onclick="window.location.href = 'aboutgenco.html'">About Genco</button>
+    <button type="button" id="mark">GencoSite</button>
+    <div id="cardgamerun">
+        <p id="gencotimer">00:00:00</p>
+        <script>
+            for (let i = 1; i <= 100; i++) {
+                document.write(`<button type="button" id="${i}"></button>`);
+                if (i % 10 === 0) {
+                    document.write('<br>');
+                }
+            }
+        </script>
+        <div id="timeselect">
+            <label for="time">Wait time:</label><br>
+            <select id="waittime">
+                <option value="3000">3 seconds</option>
+                <option value="2000">2 seconds</option>
+                <option value="1500" selected>1.5 seconds</option>
+                <option value="1000">1 second</option>
+                <option value="500">0.5 second</option>
+            </select>
+        </div>
+    </div>
+    <div id="contact">
+        <a href="https://www.instagram.com/batugencpiano/"><img src="" alt="instagram" id="instagram"></a>        
+    </div>
+    <p id="datetime">YYYY-MM-DD</p>
+</body>
+<script>
+    function setTheme(theme, instagram){
+        let oldlink = document.getElementsByTagName("link").item(0);
+        let newlink = document.createElement("link");
+        newlink.setAttribute("rel", "stylesheet");
+        newlink.setAttribute("type", "text/css");
+        newlink.setAttribute("href", theme);
+
+        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+        document.body.style.display = 'block';
+
+        document.getElementById("instagram").src = instagram;
+    };
+    document.body.style.zoom = "80%";
+    document.getElementById("datetime").innerText = new Date().toISOString().split("T")[0];
+    let theme = window.localStorage.getItem("theme");
+    let instagram = window.localStorage.getItem("instagram");
+    if (theme && instagram){
+        setTheme(theme, instagram);
+    }
+    else{
+        window.alert("An error occured about theme. Light style will be used");
+        setTheme("lightstyle.css", "images/instagramdark.ico");
+    }
+</script>
+<script src="gencocardpage.js"></script>
+</html>

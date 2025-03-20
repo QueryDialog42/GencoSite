@@ -1,0 +1,439 @@
+/*Main menu*/
+body {
+    background-color: bisque;
+}
+#mark {
+    float: right;
+    background: transparent;
+    border: 0px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    transition: 0.25s;
+}
+.menu {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-right: 20px;
+    border: 5px solid;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+.menu:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+#theme{
+    margin-top: 10px;
+    height: 100px;
+}
+#theme:hover{
+    cursor: pointer;
+}
+#hug {
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    font-weight: bold;
+}
+#images {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(255, 222, 232);
+}
+.images {
+    height: 150px;
+    margin-right: 30px;
+    margin-left: 30px;
+    display: inline-block;
+    transition: 0.25s;
+}
+.images:hover{
+    opacity: 0.7;
+}
+#gamebuttons {
+    margin-top: 50px;
+    text-align: center;
+}
+.gamebuttons {
+    font-size: 50px;
+    border: 5px solid;
+    border-radius: 10px;
+    margin-top: 30px;
+    transition: 0.25s;
+    width: 50%;
+}
+.gamebuttons:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+#hangmangame {
+    background-color: rgb(249, 91, 91);
+}
+#sudokugame {
+    background-color: rgb(162, 249, 91);
+}
+#amiralgame {
+    background-color: black/*rgb(91, 207, 249)*/; /*change after adding*/
+}
+#gencocardgame {
+    background-color:rgb(196, 136, 255);
+}
+#catchthegencogame{
+    background-color:rgb(183, 206, 107);
+}
+#writeitgame{
+    background-color: cadetblue;
+}
+#amiralgame:hover{
+    color: white; /*remove after adding*/
+}
+#contact {
+    margin-top: 150px;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+    border-radius: 20px;
+}
+#instagram {
+    height: 100px;
+}
+#instagram:hover {
+    opacity: 0.7;
+}
+#datetime{
+    text-align: center;
+}
+
+/*hangmangame.html*/
+#man{
+    text-align: center;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+#message {
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+#line {
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: 0.25s;
+}
+#gamerun {
+    width: 100%;
+    text-align: center;
+}
+#guess {
+    background-color: rgb(236, 236, 22);
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    border: 4px solid;
+    border-radius: 10px;
+    transition: 0.25s;
+    display: inline-block;
+}
+#guessbutton {
+    background-color: rgb(240, 240, 9);
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    border: 4px solid;
+    border-radius: 10px;
+    transition: 0.25s;
+    display: inline-block;
+}
+#guessbutton:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+#infos {
+    margin-top: 40px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: rgb(255, 167, 167);
+    border-radius: 10px;
+    transition: 0.25s;
+}
+#infos p {
+    margin-left: 20px;
+}
+#end {
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+}
+#end button {
+    margin-top: 60px;
+    width: 30%;
+    font-size: 50px;
+    border: 5px solid;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.25s;
+}
+#restart {
+    background-color:aquamarine;
+}
+#main {
+    background-color:rgb(255, 127, 127);
+}
+#restart:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+#main:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* sudoku page */
+#sudokurun {
+    margin-top: 50px;
+    text-align: center;
+}
+#sudokutimer {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.25s;
+}
+#sudokurun input {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    text-align: center;
+    font-size: 34px;
+    border: 5px solid;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(249, 249, 113);
+    transition: 0.25s;
+}
+#sudokurun .grp1 {
+    margin-right: 30px;
+}
+#sudokurun .grp2 {
+    margin-right: 30px;
+}
+#sudokurun .grp3 {
+    margin-top: 30px;
+}
+#sudokurun .grp4 {
+    margin-top: 30px;
+}
+#controlpanel {
+    margin-top: 50px;
+    text-align: center;
+}
+#controlpanel button {
+    margin-right: 20px;
+    font-size: 30px;
+    border: 5px solid;
+    border-radius: 10px;
+    padding: 40px;
+    font-weight: bold;
+    transition: 0.25s;
+}
+#clear {
+    background-color: rgb(250, 138, 138);
+}
+#control {
+    background-color: rgb(177, 250, 138);
+}
+#clear:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+#control:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* Gencocards */
+#gencotimer{
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#cardgamerun {
+    margin-top: 50px;
+    text-align: center;
+}
+#cardgamerun button{
+    margin: 5px;
+    height: 70px;
+    width: 70px;
+    background-color: #faee66;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.25s;
+}
+#cardgamerun button:hover{
+    opacity: 0.7;
+}
+#timeselect {
+    margin-top: 50px;
+}
+#waittime {
+    text-align: center;
+    font-size: 20px;
+    background: transparent;
+    border: 5px solid;
+    border-radius: 10px;
+}
+label {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+
+/* catchthegenco page */
+#score {
+    text-align: center;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.25s;
+}
+#highscore{
+    text-align: center;
+    font-size: 30px;
+}
+#progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: black;
+    transition: width 10s linear;
+}
+#catchtherun {
+    margin-top: 50px;
+    text-align: center;
+}
+#catchtherun button{
+    margin: 5px;
+    height: 70px;
+    width: 70px;
+    background-color: bisque;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0px;
+    border-radius: 10px;
+}
+#catchtherun button:hover{
+    opacity: 0.7;
+    transition: 0.25s;
+}
+
+/*Write it page*/
+#writeitrun {
+    width: 100%;
+    text-align: center;
+}
+.content {
+    font-size: 70px;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#answer {
+    border-color: black;
+    border: 5px solid;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.25s;
+}
+#countdown {
+    font-size: 30px;
+}
+
+/*aboutgenco*/
+#thisIsUs{
+    color: black;
+    text-align: center;
+}
+#thisIsUs p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    margin-right: 500px;
+    margin-left: 500px;
+}
+#thisIsUs img{
+    border-radius: 100%;
+    border: 10px solid black;
+    transition: height 2.0s, width 2.0s;
+}
+#thisIsUs img:hover{
+    height: 450px;
+    transition: 2.0s;
+    cursor: pointer;
+}
+.us{
+    height: 350px;
+    margin-top: 150px;
+}
+
+/*leave a comment*/
+#forum{
+    text-align: center;
+}
+#forummessages{
+    text-align: left;
+    list-style-type: none;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+}
+
+#docomment{
+    background-color: antiquewhite;
+    width: 50%;
+    border: 0px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+#limitwarning{
+    color: red;
+    font-size: 25px;
+}
+
+/*login*/
+#loginfor{
+    margin-top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 50px;
+    background-color: antiquewhite;
+    padding: 40px;
+}
+
+#loginfor input{
+    width: 50%;
+    font-size: 35px;
+    background: transparent;
+    border: 5px solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#loginfor button{
+    width: 25%;
+    font-size: 35px;
+    border: 5px solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#randomimage{
+    margin-top: 30px;
+    width: 300px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lightstyle.css">
+    <title>GencoGames</title>
+</head>
+<body>
+    <div id="menu">
+        <button type="button" id="games" class="menu" onclick="window.location.href = 'mainpage.html'">Genco Games</button>
+        <button type="button" id="" class="menu" onclick="window.location.href = 'aboutgenco.html'">About Genco</button>
+        <button type="button" id="" class="menu" onclick="window.location.href = 'comment.php'">Leave a comment</button>
+        <button type="button" id="quitgenco" class="menu" onclick="window.location.href = 'index.php'">Quit</button>
+        <button type="button" id="mark">GencoSite</button><br>
+    </div>
+    <img src="images/sun.ico" id="theme" alt="Theme" onclick="changeCSS()" title="Click to change theme">
+    <p id="hug">Genco games are here for free!</p>
+    <div id="images">
+        <a href="hangmanpage.html" title="Press to play 'GencoHangman'"><img src="images/face.ico" class="images" alt="HangmanGame"></a>
+        <a href="#" title="Coming soon..."><img src="images/square2.ico" class="images" alt="AmiralIsDown"></a>
+        <a href="sudokupage.html" title="Press to play 'Genco Sudoku'"><img src="images/sudoku.ico" class="images" alt="GencoSudoku"></a>
+        <a href="gencocardpage.html" title="Press to play 'Genco Cards'"><img src="images/gencocards.ico" class="images" alt="GencoCards"></a>
+        <a href="catchthegencopage.php" title="Press to play 'Catch the Genco'"><img src="images/catchthegenco.ico" class="images" alt="catchthegenco"></a>
+        <a href="writeitpage.html" title="Press to play 'Write it Genco'"><img src="images/writeitgenco.ico" class="images" alt="writeitgenco"></a>
+    </div>
+    <div id="gamebuttons">
+        <button type="button" id="hangmangame" class="gamebuttons" onclick="window.location.href = 'hangmanpage.html'">Hangman Game</button><br>
+        <button type="button" id="sudokugame" class="gamebuttons" onclick="window.location.href = 'sudokupage.html'">Genco Sudoku</button><br>
+        <button type="button" id="amiralgame" class="gamebuttons">Coming soon...</button><br>
+        <button type="button" id="gencocardgame" class="gamebuttons" onclick="window.location.href = 'gencocardpage.html'">Genco Card</button><br>
+        <button type="button" id="catchthegencogame" class="gamebuttons" onclick="window.location.href = 'catchthegencopage.php'">Catch the Genco</button><br>
+        <button type="button" id="writeitgame" class="gamebuttons" onclick="window.location.href = 'writeitpage.html'">Write it</button>
+    </div>
+    <div id="contact">
+        <a href="https://www.instagram.com/batugencpiano/"><img src="images/instagramdark.ico" alt="instagram" id="instagram"></a>        
+    </div>
+    <p id="datetime">YYYY-MM-DD</p>
+</body>
+    <script>
+        let theme;
+        let image;
+        let instagram;
+        function changeCSS() {
+            function setTheme(css, img, instimg){
+                let oldlink = document.getElementsByTagName("link").item(0);
+                let newlink = document.createElement("link");
+                newlink.setAttribute("rel", "stylesheet");
+                newlink.setAttribute("type", "text/css");
+                newlink.setAttribute("href", css);
+
+                document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+                document.getElementById("theme").src = img;
+
+                document.getElementById("instagram").src = instimg;
+
+                window.localStorage.setItem("theme", css);
+                window.localStorage.setItem("image", img);
+                window.localStorage.setItem("instagram", instimg);
+            }
+            theme = document.getElementById("theme").src.split("/");
+            const img = theme[theme.length - 1]; 
+            if (img === "sun.ico"){
+                setTheme('darkstyle.css', "images/night.ico", "images/instagramlight2.ico");
+            }
+            else if (img === "night.ico"){
+                setTheme('lightstyle.css', "images/sun.ico", "images/instagramdark.ico");
+            }
+            else {
+                window.alert("Something went wrong while downloading theme. Light theme will be used.");
+            }
+        }
+        window.onload = function() {
+            document.body.style.zoom = "80%";
+            theme = window.localStorage.getItem("theme");
+            image = window.localStorage.getItem("image");
+            instagram = window.localStorage.getItem("instagram");
+            if (theme === null) {
+                window.localStorage.setItem("theme", "lightstyle.css");
+                theme = "lightstyle.css";
+            }
+            if (image === null){
+                window.localStorage.setItem("image", "images/sun.ico");
+                image = "images/sun.ico";
+            }
+            if (instagram === null){
+                window.localStorage.setItem("instagram", "images/instagramdark.ico");
+                instagram = "images/instagramdark.ico";
+            }
+            let oldlink = document.getElementsByTagName("link").item(0);
+            let newlink = document.createElement("link");
+            newlink.setAttribute("rel", "stylesheet");
+            newlink.setAttribute("type", "text/css");
+            newlink.setAttribute("href", theme);
+
+            document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+
+            document.body.style.display = 'block';
+            // Get the current date
+            const currentDate = new Date();
+            // Format the date as YYYY-MM-DD
+            const formattedDate = currentDate.toISOString().split('T')[0];
+            // Display the formatted date in the datetime element
+            document.getElementById("datetime").innerText = formattedDate;
+
+            document.getElementById("theme").src = image;
+            document.getElementById("instagram").src = instagram;
+        }
+    </script>
+</html>

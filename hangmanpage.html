@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lightstyle.css">
+    <title>GencoGames</title>
+</head>
+<body>
+    <button type="button" id="games" class="menu" onclick="window.location.href = 'mainpage.html'">Genco Games</button>
+    <button type="button" id="games" class="menu" onclick="window.location.href = 'aboutgenco.html'">About Genco</button>
+    <button type="button" id="mark">GencoSite</button>
+
+    <p id="man"></p>
+    <p id="message" style="color: #f27474"></p>
+    <p id="line"></p>
+    <div id="gamerun">
+        <input id="guess" autocomplete="off">
+        <button type="button" id="guessbutton">Guess</button>
+    </div>
+    <div id="infos">
+        <p id="guessedwords">Guessed words:</p>
+        <p id="guessedletters">Guessed letters:</p>
+    </div>
+    
+    <div id="contact">
+        <a href="https://www.instagram.com/batugencpiano/"><img src="" alt="instagram" id="instagram"></a>        
+    </div>
+    <p id="datetime">YYYY-MM-DD</p>
+</body>
+<script>
+    document.body.style.zoom = "80%";
+    let theme = window.localStorage.getItem("theme");
+    let instagram = window.localStorage.getItem("instagram");
+    if (theme){
+        let oldlink = document.getElementsByTagName("link").item(0);
+        let newlink = document.createElement("link");
+        newlink.setAttribute("rel", "stylesheet");
+        newlink.setAttribute("type", "text/css");
+        newlink.setAttribute("href", theme);
+
+        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+        document.body.style.display = 'block';
+
+        document.getElementById("datetime").innerText = new Date().toISOString().split("T")[0];
+
+        document.getElementById("instagram").src = instagram;
+    }
+</script>
+<script src="hangmanpage.js"></script>
+</html>
